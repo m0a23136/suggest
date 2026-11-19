@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>思い出記録アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- ホーム画面 -->
+  <div id="homePage">
+    <h1>思い出記録</h1>
+
+    <section class="prompt-card">
+      <h2>今日の撮影お題</h2>
+      <p id="promptText"></p>
+      <button id="startPromptShooting">このお題で撮影する</button>
+    </section>
+
+    <section class="reminder-card">
+      <h2>今日の記録</h2>
+      <p id="reminderMessage"></p>
+      <button id="startShooting">写真を撮る</button>
+    </section>
+
+    <button class="link-btn" id="openAlbum">アルバムを見る</button>
+  </div>
+
+  <!-- カメラ画面 -->
+  <div id="cameraPage" style="display:none;">
+    <h1>思い出記録</h1>
+    <p id="currentPrompt"></p>
+
+    <div class="camera-container">
+      <video id="video" autoplay playsinline></video>
+      <canvas id="canvas"></canvas>
+      <button id="switchCameraBtn">カメラ切替</button>
+      <button id="captureBtn">撮影して保存</button>
+    </div>
+
+    <button class="link-btn" id="backHome">ホームに戻る</button>
+    <button class="link-btn" id="openAlbumFromCamera">アルバムを見る</button>
+  </div>
+
+  <!-- アルバム画面 -->
+  <div id="albumPage" style="display:none;">
+    <h2>撮影した写真</h2>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="メモを検索">
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+    <button id="backHomeFromAlbum">ホームに戻る</button>
+  </div>
+
+  <script src="common.js"></script>
+  <script src="reminder.js"></script>
+  <script src="camera.js"></script>
+  <script src="album.js"></script>
+</body>
+</html>
